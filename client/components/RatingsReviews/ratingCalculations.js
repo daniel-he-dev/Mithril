@@ -1,4 +1,3 @@
-
 const ratingCalculations = function (allRatings) {
   let total = 0;
   let ratingsCount = 0;
@@ -10,7 +9,7 @@ const ratingCalculations = function (allRatings) {
     }
   }
   if (total && ratingsCount) {
-    ratingAverage = (total / ratingsCount);
+    ratingAverage = total / ratingsCount;
   }
 
   return {

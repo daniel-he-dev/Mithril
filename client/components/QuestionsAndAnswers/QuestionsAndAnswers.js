@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import React, { useState, useEffect, useContext } from 'react';
 import SearchBar from './SearchBar.js';
 import QuestionList from './QuestionList.js';
@@ -15,9 +14,7 @@ const QuestionsAndAnswers = (props) => {
   //Initial data fetch
   useEffect(() => {
     axios
-      .get(
-        `proxy/api/fec2/hratx/qa/questions?product_id=${curProduct.id}&count=50`
-      )
+      .get(`proxy/api/fec2/hratx/qa/questions?product_id=${curProduct.id}&count=50`)
       .then((res) => {
         let data = res.data.results.sort((a, b) => b.question_helpfulness - a.question_helpfulness);
         initialQuestions = data;
@@ -35,8 +32,8 @@ const QuestionsAndAnswers = (props) => {
             question_id: questions.length + 1,
             question_body: question.body,
             question_helpfulness: 0,
-            asker_name: question.name,
-          },
+            asker_name: question.name
+          }
         ]);
       })
       .then(() => setNumQuestions(questions.length))
@@ -58,22 +55,18 @@ const QuestionsAndAnswers = (props) => {
   };
 
   return (
-    <div id="questions-and-answers" className="d-module">
+    <div id='questions-and-answers' className='d-module'>
       <strong>QUESTIONS &amp; ANSWERS</strong>
       <SearchBar handleInput={handleSearch} />
       {questions.length > 0 && (
         <QuestionList
-          questions={
-            questions.length > numQuestions
-              ? questions.slice(0, numQuestions)
-              : questions
-          }
+          questions={questions.length > numQuestions ? questions.slice(0, numQuestions) : questions}
         />
       )}
-      <div className="d-module-bottom">
+      <div className='d-module-bottom'>
         {numQuestions < questions.length && (
           <button
-            className="d-border-button d-bold"
+            className='d-border-button d-bold'
             onClick={() => setNumQuestions(numQuestions + 2)}
           >
             More Questions

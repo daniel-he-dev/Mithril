@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import StarRatings from 'react-star-ratings';
 import ratingCalculations from './ratingCalculations.js';
 
@@ -11,13 +11,13 @@ const RatingSummary = ({ allRatings }) => {
         <div className='jstars'>
           <StarRatings
             rating={ratingAverage || 0}
-            starRatedColor="#394a6d"
+            starRatedColor='#394a6d'
             numberOfStars={5}
-            name="rating"
-            starDimension="20px"
+            name='rating'
+            starDimension='20px'
           />
         </div>
-        <div className="overallRating">{ratingAverage.toFixed(1)}</div>
+        <div className='overallRating'>{ratingAverage.toFixed(1)}</div>
       </div>
     </div>
   );

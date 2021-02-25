@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { ProductContext } from '../../../context/ProductContext';
 import { motion } from 'framer-motion';
 
@@ -6,11 +6,11 @@ export const StyleSelector = () => {
   const { curProduct, curStyle, updateCurStyle } = useContext(ProductContext);
 
   return (
-    <div className="mStyleBody">
-      <div className="fs-4">
+    <div className='mStyleBody'>
+      <div className='fs-4'>
         STYLE <b>&gt;</b> {curStyle.name}
       </div>
-      <div className="prodStyles">
+      <div className='prodStyles'>
         {curProduct.styles.results.map((product, i) => {
           return product.photos[0].thumbnail_url ? (
             <motion.div
@@ -26,11 +26,11 @@ export const StyleSelector = () => {
                 width: '80px',
                 backgroundColor: 'lightcoral',
                 backgroundSize: 'cover',
-                backgroundImage: `url(${product.photos[0].thumbnail_url})`,
+                backgroundImage: `url(${product.photos[0].thumbnail_url})`
               }}
             >
               {curStyle.style_id === product.style_id && (
-                <div className="mSelectorIndicator">✓</div>
+                <div className='mSelectorIndicator'>✓</div>
               )}
             </motion.div>
           ) : (

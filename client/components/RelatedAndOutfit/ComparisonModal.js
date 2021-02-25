@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Modal } from 'react-bootstrap';
 import { ProductContext } from '../../context/ProductContext';
 
 export const ComparisonModal = (props) => {
@@ -7,11 +7,7 @@ export const ComparisonModal = (props) => {
   const handleClose = () => setShow(false);
 
   return (
-    <Modal
-      show={show}
-      onHide={handleClose}
-      keyboard={false}
-    >
+    <Modal show={show} onHide={handleClose} keyboard={false}>
       <Modal.Header closeButton>
         <Modal.Title>Choices, choices....</Modal.Title>
       </Modal.Header>

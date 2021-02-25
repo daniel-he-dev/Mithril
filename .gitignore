@@ -11,3 +11,5 @@ coverage
 coverage/
 .eslintignore
 .eslintrc.js
+FEC-performance*
+.DS_Store

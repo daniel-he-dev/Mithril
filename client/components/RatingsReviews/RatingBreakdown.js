@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ratingCalculations from './ratingCalculations.js';
 
 const RatingBreakdown = ({ allRatings, recommend }) => {
@@ -22,25 +22,24 @@ const RatingBreakdown = ({ allRatings, recommend }) => {
 
   return (
     <div>
-      {!(isNaN(recommendPercent)) ? Math.round(recommendPercent) : 100}% of users recommend this item.
-      <div className="jbarGraph">
-        <div className="row">
+      {!isNaN(recommendPercent) ? Math.round(recommendPercent) : 100}% of users recommend this item.
+      <div className='jbarGraph'>
+        <div className='row'>
           {ratingPercentages.map((percentage) => {
             counter--;
             return (
               <React.Fragment key={counter}>
-                <div className="side">
+                <div className='side'>
                   <div className='jXAxis'>{counter} stars</div>
                 </div>
-                <div className="middle">
-                  <div className="jbar-container">
-                    <div
-                      className="jbars"
-                      style={{'width': `${percentage || 0}%`}}
-                    ></div>
+                <div className='middle'>
+                  <div className='jbar-container'>
+                    <div className='jbars' style={{ width: `${percentage || 0}%` }}></div>
                   </div>
-                </div> <br />
-              </React.Fragment>);
+                </div>{' '}
+                <br />
+              </React.Fragment>
+            );
           })}
         </div>
       </div>

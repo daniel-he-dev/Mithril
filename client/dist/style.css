@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .mHeader {
@@ -16,7 +16,7 @@ body {
 
 .d-module {
   display: grid;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   margin: 20px 0;
   grid-template-columns: 1fr;
   padding: 20px;
@@ -133,9 +133,9 @@ body {
   display: grid;
   grid-template-columns: 0.5fr 1.5fr;
   gap: 0px 0px;
-  grid-template-areas: "ReviewSideBar ReviewList";
+  grid-template-areas: 'ReviewSideBar ReviewList';
   margin: 15px 0;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 15px;
 }
 
@@ -149,6 +149,11 @@ body {
 
 .ReviewList {
   grid-area: ReviewList;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 600px;
+  width: 850px;
+  overflow: auto;
 }
 
 .jButtonContainer {
@@ -169,8 +174,8 @@ body {
   gap: 20px 20px;
   height: 150px;
   grid-template-areas:
-    "jStars . jDate"
-    "ReviewText ReviewText ReviewText";
+    'jStars . jDate'
+    'ReviewText ReviewText ReviewText';
   border: 2px solid black;
   border-width: 0px 0px 2px 0px;
   margin-bottom: 20px;
@@ -193,9 +198,9 @@ body {
   gap: 20px 20px;
   height: 600px;
   grid-template-areas:
-    "RatingSummary"
-    "RatingBreakdown"
-    "ProductBreakdown";
+    'RatingSummary'
+    'RatingBreakdown'
+    'ProductBreakdown';
   margin: 0 20px;
 }
 
@@ -220,17 +225,15 @@ body {
   font-weight: bold;
 }
 
-
 .c-related-items-carousel {
   border: '2px';
-  border-color: 'black'
+  border-color: 'black';
 }
 
 .c-related-items {
   border: '2px';
-  border-color: 'black'
+  border-color: 'black';
 }
-
 
 /* Three column layout */
 .side {
@@ -252,7 +255,7 @@ body {
 
 /* Clear floats after the columns */
 .jrow:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -320,7 +323,7 @@ body {
 .jmarker {
   color: black;
   height: 10px;
-  font-size: "16px";
+  font-size: '16px';
   position: relative;
   bottom: 10px;
 }
@@ -329,4 +332,8 @@ body {
   width: 100%;
   background-color: #b6b0b0;
   height: 10px;
+}
+
+.row {
+  padding: 10px;
 }

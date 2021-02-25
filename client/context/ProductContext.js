@@ -1,8 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {
-  singleProd,
-  singleProdStyle,
-} from '../components/ProductOverview/tempData';
 import axios from 'axios';
 
 export const ProductContext = createContext();
@@ -11,20 +7,23 @@ export const ProductProvider = ({ children }) => {
   const [curStyle, setCurStyle] = useState(null);
   const [zoomIn, setZoomIn] = useState(false);
 
-
   useEffect(() => {
     getSingleProduct(12012);
   }, []);
 
   const getSingleProduct = (prodID) => {
-    let tempProduct,
-      tempStyle;
-    let urls = [`/proxy/api/fec2/hratx/products/${prodID}`, `/proxy/api/fec2/hratx/products/${prodID}/styles`, `/proxy/api/fec2/hratx/reviews?product_id=${prodID}`];
-    Promise.all(urls.map(url => {
-      return axios.get(url)
-        .then(res => res.data);
-    }))
-      .then(results => {
+    let tempProduct, tempStyle;
+    let urls = [
+      `/proxy/api/fec2/hratx/products/${prodID}`,
+      `/proxy/api/fec2/hratx/products/${prodID}/styles`,
+      `/proxy/api/fec2/hratx/reviews?product_id=${prodID}`
+    ];
+    Promise.all(
+      urls.map((url) => {
+        return axios.get(url).then((res) => res.data);
+      })
+    )
+      .then((results) => {
         //Product Details
         tempProduct = results[0];
         //Product Styles

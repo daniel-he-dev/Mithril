@@ -59,6 +59,7 @@
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
     "react-preloader-icon": "^1.0.0",
+    "react-scroll": "^1.8.1",
     "react-star-ratings": "^2.3.0",
     "spdy": "^4.0.2",
     "webpack": "^5.17.0",

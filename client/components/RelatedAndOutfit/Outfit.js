@@ -1,8 +1,5 @@
 import React from 'react';
-import exampleData from './exampleData.js';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-
-
 
 class Outfit extends React.Component {
   constructor(props) {
@@ -13,7 +10,7 @@ class Outfit extends React.Component {
   }
 
   addItemClick(item) {
-    this.setState({ outfitList: (this.state.outfitList.concat(item))})
+    this.setState({ outfitList: this.state.outfitList.concat(item) });
   }
 
   render() {

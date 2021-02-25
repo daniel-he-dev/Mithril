@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import AddReview from './AddReview.js';
-import StarRatings from 'react-star-ratings';
-import { helpfulClick, reportClick } from './handleReviewClicks.js';
 import { IndividualReview } from './individualReview.js';
 import { sort, SortContext } from './SortReviews.js';
 import { ProductContext } from '../../context/ProductContext.js';
 
 const getReviews = (productId) => {
-  let url =
-    '/proxy/api/fec2/hratx/reviews/?product_id=' + productId;
+  let url = '/proxy/api/fec2/hratx/reviews/?product_id=' + productId;
   return axios
     .get(url)
     .then((response) => {
@@ -33,7 +30,11 @@ const SortReviews = () => {
   return (
     <div>
       Sort reviews by:&nbsp;
-      <select onChange={changeMethod} className="form-select row w-100" aria-label="sort reviews, select option">
+      <select
+        onChange={changeMethod}
+        className='form-select row w-100'
+        aria-label='sort reviews, select option'
+      >
         <option>Relevance</option>
         <option>Helpfulness</option>
         <option>Newest</option>
@@ -44,7 +45,6 @@ const SortReviews = () => {
 
 export const ReviewList = (props) => {
   const { curProduct } = useContext(ProductContext);
-  // const [loading, setLoading] = useState(true);
   const [reviews, setReviews] = useState(<div>Loading reviews...</div>);
   const [numReviews, setNumReviews] = useState(2);
   const { sortMethod } = useContext(SortContext);
@@ -60,7 +60,7 @@ export const ReviewList = (props) => {
     'September',
     'October',
     'November',
-    'December',
+    'December'
   ];
 
   useEffect(() => {
@@ -78,14 +78,7 @@ export const ReviewList = (props) => {
               ', ' +
               date.getFullYear();
             if (index < numReviews) {
-              return (
-                <IndividualReview
-                  counter={index}
-                  result={result}
-                  date={date}
-                  key={index}
-                />
-              );
+              return <IndividualReview counter={index} result={result} date={date} key={index} />;
             }
           })
         );
@@ -97,15 +90,12 @@ export const ReviewList = (props) => {
 
   return (
     <>
-      <div className="ReviewList">
+      <div className='ReviewList'>
         <SortReviews />
         <div>{reviews}</div>
       </div>
-      <div className="jButtonContainer">
-        <AddReview
-          productId={curProduct.id}
-          characteristics={props.characteristics}
-        />
+      <div className='jButtonContainer'>
+        <AddReview productId={curProduct.id} characteristics={props.characteristics} />
         {reviews.length > numReviews ? (
           <button
             className='d-bold d-border-button'
@@ -115,7 +105,7 @@ export const ReviewList = (props) => {
           >
             More Reviews
           </button>
-        ) :
+        ) : (
           <button
             disabled
             className='d-bold d-border-button'
@@ -125,9 +115,8 @@ export const ReviewList = (props) => {
           >
             More Reviews
           </button>
-        }
+        )}
       </div>
-
     </>
   );
 };
