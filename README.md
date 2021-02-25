@@ -1,30 +1,33 @@
-# Team Mithril - Front End Capstone Project
+# Mithril
 
-## Overview
+Mithril is a responsive single-page web application for browsing, purchasing, and providing feedback on stylish modern clothing. The site is hosted on AWS and has a React-based front-end. 
+
+[Check out the deployed app here!]()
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Table of Contents](#table-of-contents)
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Related Projects](#related-projects)
+- [Installation & Usage](#installation--usage)
 - [Team Members](#team-members)
 - [Roadmap](#roadmap)
 - [License](#license)
 
-## Description
 
-Mithril is a responsive single-page web application for browsing, purchasing, and providing feedback on stylish modern clothing. The site is hosted on AWS and has a React-based front-end.
+## Technologies
 
-# Technologies
+<table>
+  <tr>
+    <th>Front-End</th>
+    <th>Back-End</th>
+    <th>Hosting</th>
+  </tr>
+  <tr>
+    <td>![](https://miro.medium.com/max/1280/1*vbCQ6KH6c6TrWNNEYF9PDw.png)</td>
+    <td>![](https://camo.githubusercontent.com/e34da2e8843d492d1b021fb733a9825912e1cb65/68747470733a2f2f627574746572636d732e636f6d2f7374617469632f696d616765732f746563685f62616e6e6572732f457870726573734a532e706e67)</td>
+    <td>![](https://cdn.freebiesupply.com/logos/thumbs/2x/heroku-logo.png)</td>
+  </tr>
+</table>
 
-|                             Front-End                              |                                                                                                   Back-End                                                                                                    |                              Hosting                               |
-| :----------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------: |
-| ![](https://miro.medium.com/max/1280/1*vbCQ6KH6c6TrWNNEYF9PDw.png) | ![](https://camo.githubusercontent.com/e34da2e8843d492d1b021fb733a9825912e1cb65/68747470733a2f2f627574746572636d732e636f6d2f7374617469632f696d616765732f746563685f62616e6e6572732f457870726573734a532e706e67) | ![](https://cdn.freebiesupply.com/logos/thumbs/2x/heroku-logo.png) |
-
-## Installation
+## Installation & Usage
 
 After forking the repo and cloning to local machine, follow these steps to install.
 
