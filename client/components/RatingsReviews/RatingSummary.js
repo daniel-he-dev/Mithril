@@ -6,7 +6,7 @@ const RatingSummary = ({ allRatings }) => {
   let { ratingAverage } = ratingCalculations(allRatings);
   return (
     <div>
-      <b>Ratings &amp; Reviews </b>
+      <b>RATINGS &amp; REVIEWS </b>
       <div className='RatingSummary'>
         <div className='jstars'>
           <StarRatings

@@ -48,18 +48,6 @@ export const HooksRelatedItems = () => {
     });
   };
 
-  const updateSelectedProduct = (product) => {
-    // selectedProduct features + curProduct features
-    let tempFeatures = Array.from(
-      new Set(
-        product.features.map((i) => i.feature).concat(curProduct.features.map((i) => i.feature))
-      )
-    );
-    setSelectedProduct(product);
-    setShow(true);
-    setCombinedFeatures(tempFeatures);
-  };
-
   useEffect(() => {
     let url = `/proxy/api/fec2/hratx/products/${curProduct.id}/related`;
     axios
@@ -81,27 +69,24 @@ export const HooksRelatedItems = () => {
 
   return (
     <>
-      <b>Related Items</b>
-      <div className='border' style={{ height: '500px', overflow: 'hidden' }}>
+      <b>RELATED ITEMS</b>
+      <br />
+      <div style={{ overflow: 'hidden' }}>
         <CarouselProvider
           className='c-related-items-carousel'
           naturalSlideHeight={100}
           naturalSlideWidth={100}
           totalSlides={relatedProductInfo.length}
           visibleSlides={3}
-          dragEnabled={false}
+          dragEnabled={true}
         >
-          <div>
-            <ButtonBack className='d-bold d-border-button'>Back</ButtonBack>
-            <ButtonNext className='d-bold d-border-button'>Next</ButtonNext>
-          </div>
           <Slider aria-label='related products carousel'>
             {relatedProductInfo.map(
-              (product) =>
+              (product, idx) =>
                 product.thumbnail && (
                   <Slide
                     aria-label='product slide'
-                    key={Math.random()}
+                    key={idx}
                     style={{
                       borderStyle: 'solid',
                       height: '300px',
@@ -122,21 +107,6 @@ export const HooksRelatedItems = () => {
                         width: '95%'
                       }}
                     >
-                      <p
-                        // style={{
-                        //   color: 'yellow',
-                        //   fontSize: '25px',
-                        //   textAlign: 'right',
-                        //   zIndex: '100',
-                        //   position: 'absolute'
-                        // }}
-                        onClick={() => {
-                          setShow(true);
-                          updateSelectedProduct(product);
-                        }}
-                      >
-                        {/* &#9733; */}
-                      </p>
                       <div
                         style={{
                           height: '70%',
@@ -180,43 +150,6 @@ export const HooksRelatedItems = () => {
             )}
           </Slider>
         </CarouselProvider>
-        <Modal show={show} onHide={() => setShow(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>Choices, choices....</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <table>
-              <tbody>
-                <tr>
-                  <th>{selectedProduct && selectedProduct.name}</th>
-                  <th>vs.</th>
-                  <th>{curProduct.name}</th>
-                </tr>
-                {combinedFeatures.map((feat) => {
-                  let theValueL = '';
-                  let theValueR = '';
-                  selectedProduct.features.find((i) => {
-                    if (i.feature === feat) {
-                      theValueL = i.value;
-                    }
-                  });
-                  curProduct.features.find((i) => {
-                    if (i.feature === feat) {
-                      theValueR = i.value;
-                    }
-                  });
-                  return (
-                    <tr>
-                      <td>{theValueL}</td>
-                      <td>{feat}</td>
-                      <td>{theValueR}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </Modal.Body>
-        </Modal>
       </div>
     </>
   );
