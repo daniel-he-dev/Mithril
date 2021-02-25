@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/MithrilHRATX53/FEC/issues"
   },
-  "homepage": "https://github.com/MithrilHRATX53/FEC#readme",
+  "homepage": "https://daniel-he-dev.github.io/Mithril",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
