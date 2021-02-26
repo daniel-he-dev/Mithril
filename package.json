@@ -6,7 +6,8 @@
   "scripts": {
     "test:coverage": "react-scripts test -- --coverage --watchAll=false",
     "test": "react-scripts test",
-    "start": "webpack --progress --watch",
+    "build:dev": "webpack --progress --watch",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "build": "webpack"
   },
