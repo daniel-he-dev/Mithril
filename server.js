@@ -1,4 +1,3 @@
-
 const port = 3000;
 const express = require('express');
 const app = express();
@@ -18,7 +17,7 @@ app.use(
       proxyReqOpts.headers['Authorization'] = `${process.env.TOKEN}`;
       // you can change the method
       return proxyReqOpts;
-    },
+    }
   })
 );
 
@@ -34,13 +33,17 @@ app.use(
 );
 
 //Configure SSL and server
-const options = {
-  key: fs.readFileSync(path.join(__dirname, 'key.pem')),
-  cert: fs.readFileSync(path.join(__dirname, 'cert.pem')),
-  passphrase: 'hailmithril'
-}
+// const options = {
+//   key: fs.readFileSync(path.join(__dirname, 'key.pem')),
+//   cert: fs.readFileSync(path.join(__dirname, 'cert.pem')),
+//   passphrase: 'hailmithril'
+// }
 
-spdy.createServer(options, app)
-  .listen(port, () => {
-    console.log(`HTTP/2 Express running at http://localhost:${port}`);
-  });
+// spdy.createServer(options, app)
+//   .listen(port, () => {
+//     console.log(`HTTP/2 Express running at http://localhost:${port}`);
+//   });
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
