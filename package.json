@@ -38,7 +38,6 @@
     "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.17.0",
     "express": "^4.17.1",
-    "express-static-gzip": "^2.1.1",
     "jest": "^26.6.3",
     "mocha": "^8.2.1",
     "react-scripts": "^4.0.1",
@@ -48,6 +47,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "express-static-gzip": "^2.1.1",
     "babel-loader": "^8.2.2",
     "bootstrap": "^5.0.0-beta1",
     "dotenv": "^8.2.0",
