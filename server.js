@@ -1,4 +1,3 @@
-const port = 3000;
 const express = require('express');
 const app = express();
 const spdy = require('spdy');
@@ -7,6 +6,7 @@ const path = require('path');
 const proxy = require('express-http-proxy');
 require('dotenv').config();
 const expressStaticGzip = require('express-static-gzip');
+const port = process.env.PORT || 3000;
 
 //Routing
 app.use(
