@@ -8,11 +8,15 @@ export const ProductProvider = ({ children }) => {
   const [zoomIn, setZoomIn] = useState(false);
 
   useEffect(() => {
-    getSingleProduct(12012);
+    // axios.get(`/proxy/api/fec2/hratx/products/`).then((res) => {
+    //   getSingleProduct(res.data[0].id);
+    // });
+    getSingleProduct(21111);
   }, []);
 
   const getSingleProduct = (prodID) => {
-    let tempProduct, tempStyle;
+    let tempProduct;
+    let tempStyle;
     let urls = [
       `/proxy/api/fec2/hratx/products/${prodID}`,
       `/proxy/api/fec2/hratx/products/${prodID}/styles`,

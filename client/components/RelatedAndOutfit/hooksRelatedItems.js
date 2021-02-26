@@ -6,7 +6,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { Modal } from 'react-bootstrap';
 import StarRatings from 'react-star-ratings';
 
-export const HooksRelatedItems = () => {
+export default function HooksRelatedItems() {
   const { curProduct, getSingleProduct } = useContext(ProductContext);
   const [relatedProductIds, setRelatedProductIds] = useState([]);
   const [relatedProductInfo, setRelatedProductInfo] = useState([]);
@@ -70,8 +70,7 @@ export const HooksRelatedItems = () => {
   return (
     <>
       <b>RELATED ITEMS</b>
-      <br />
-      <div style={{ overflow: 'hidden' }}>
+      <div className='c-related-items d-module' style={{ overflow: 'hidden' }}>
         <CarouselProvider
           className='c-related-items-carousel'
           naturalSlideHeight={100}
@@ -90,58 +89,48 @@ export const HooksRelatedItems = () => {
                     style={{
                       borderStyle: 'solid',
                       height: '300px',
-                      width: '325px',
+                      width: '306px',
                       marginLeft: '7px',
                       marginRight: '7px',
                       position: 'relative'
                     }}
-                    index={0}
                   >
                     <div
                       style={{
                         height: '400px',
-                        width: '280px',
-                        display: 'block',
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        width: '95%'
+                        display: 'block'
+                        // marginLeft: 'auto',
+                        // marginRight: 'auto',
+                        // width: '95%'
                       }}
                     >
                       <div
-                        style={{
-                          height: '70%',
-                          width: '100%',
-                          position: 'absolute'
+                        onClick={() => {
+                          getSingleProduct(product.id);
                         }}
-                      >
-                        <div
-                          onClick={() => {
-                            getSingleProduct(product.id);
-                          }}
-                          style={{
-                            height: '300px',
-                            width: '300px',
-                            backgroundImage: product.thumbnail
-                              ? `url(${
-                                  product.thumbnail.split('&w=')[0] + '&w=300&h=300&crop=faces'
-                                })`
-                              : null,
-                            backgroundRepeat: 'no-repeat'
-                          }}
-                        ></div>
-                        <div style={{ height: '30%', width: '100%' }}>
-                          <div className='fs-6 m-0'>{product.category}</div>
-                          <div className='fs-6 m-0'>{product.name}</div>
-                          <div className='fs-6 m-0'>${product.default_price}</div>
-                          <div className='fs-6 m-0'>
-                            <StarRatings
-                              rating={3.8}
-                              starRatedColor='#394a6d'
-                              numberOfStars={5}
-                              name='rating'
-                              starDimension='20px'
-                            />
-                          </div>
+                        style={{
+                          height: '300px',
+                          width: '300px',
+                          backgroundImage: product.thumbnail
+                            ? `url(${
+                                product.thumbnail.split('&w=')[0] + '&w=300&h=300&crop=faces'
+                              })`
+                            : null,
+                          backgroundRepeat: 'no-repeat'
+                        }}
+                      ></div>
+                      <div style={{ height: '30%', width: '100%', padding: '10px' }}>
+                        <div className='fs-6 m-0'>{product.category}</div>
+                        <div className='fs-6 m-0'>{product.name}</div>
+                        <div className='fs-6 m-0'>${product.default_price}</div>
+                        <div className='fs-6 m-0'>
+                          <StarRatings
+                            rating={3.8}
+                            starRatedColor='#394a6d'
+                            numberOfStars={5}
+                            name='rating'
+                            starDimension='20px'
+                          />
                         </div>
                       </div>
                     </div>
@@ -153,4 +142,4 @@ export const HooksRelatedItems = () => {
       </div>
     </>
   );
-};
+}
