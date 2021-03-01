@@ -1,6 +1,8 @@
+![logo](docs/readme/logo.png)
+
 # Mithril
 
-Mithril is a responsive single-page web application for browsing, purchasing, and providing feedback on stylish modern clothing. 
+A modern single-page web application for browsing, purchasing, and providing feedback on stylish clothing. 
 
 Check out the deployed app on Heroku [here](http://glacial-dawn-48786.herokuapp.com/)!
 
