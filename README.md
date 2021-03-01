@@ -7,6 +7,7 @@ Check out the deployed app on Heroku [here](http://glacial-dawn-48786.herokuapp.
 ## Table of Contents
 
 - [Description](#description)
+- [Optimization](#optimization)
 - [Technologies](#technologies)
 - [Installation](#installation)
 - [Team Members](#team-members)
@@ -32,6 +33,8 @@ Below, the user finds a question and answer section and a reviews section.
 - An average product rating is also available, with specific ratings for different criteria. Text reviews are also available to read, sorted, or submitted through a pop-up modal.
 
 ![Questions and Reviews](docs/readme/questionsandreviews.png)
+
+## Optimization
 
 Upon feature completion, the user experience was optimized to achieve stellar performance, adherence to best practices/accessibility requirements, and search-engine optimization. Performance was enhanced through various techniques to bring the Speed Index from 6.3s to 0.7s. Below are some high impact adjustments.
 - Brotli Text Compression (reduced bundle size)
