@@ -5,6 +5,7 @@
 A modern single-page web application for browsing, purchasing, and providing feedback on stylish clothing. 
 
 Check out the deployed app on Heroku [here](http://glacial-dawn-48786.herokuapp.com/)!
+Check out how the Mithril-products back-end service was implemented [here](https://github.com/daniel-he-dev/Mithril-products).
 
 ## Table of Contents
 
